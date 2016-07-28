@@ -5,7 +5,7 @@ require 'bcrypt'
 class User
   include DataMapper::Resource
 
-  attr_reader :password
+  attr_reader :password, :email
   attr_accessor :password_confirmation
 
   validates_confirmation_of :password
