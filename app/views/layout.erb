@@ -9,9 +9,14 @@
       Hello, <%= current_user.email %>
     <% end %>
 
-    <% if flash[:notice]%>
+    <% if flash[:errors] && !flash[:errors].empty? %>
       <div id="notice">
-        <%= flash[:notice]%>
+        Please refer to errors below:
+        <ul id="errors">
+          <% flash[:errors].each do |error|%>
+          <li><%= error %></li>
+          <% end %>
+        </ul>
       </div>
     <% end %>
     <%= yield %>
