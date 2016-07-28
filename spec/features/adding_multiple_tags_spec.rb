@@ -1,6 +1,6 @@
 feature 'Adding tag' do
 
-  scenario 'I can add a single tag to a link' do
+  scenario 'I can add multiple tags to a link' do
 
     visit '/links/new'
     fill_in 'url',    with: 'http://www.zombo.com'
