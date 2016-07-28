@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
     <h1>Links</h1>
     <ul id='links'>
@@ -8,3 +9,14 @@
        </li>
        <% end %>
     </ul>
+=======
+<h1>Links</h1>
+<ul id='links'>
+    <% @links.each do |link| %>
+      <li>
+        <a href='<%= link.url %>'><%= link.title %></a>
+        URL: <a href='<%= link.url %>'> Title: <%= link.title %></a>
+      </li>
+      <% end %>
+  </ul>
+>>>>>>> 31387bfb46f57a608a0a621d081064c2f1e2fa95
