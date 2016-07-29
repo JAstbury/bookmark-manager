@@ -13,3 +13,8 @@ def sign_in
   fill_in :password, with: 'kiwi'
   click_button('Sign in')
 end
+
+def sign_out
+  visit '/links'
+  click_button('Sign out')
+end
