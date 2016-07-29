@@ -23,7 +23,7 @@ register Sinatra::Flash
         session[:user_id] = @user.id
         redirect to '/links'
       else
-        flash.now[:notice] = 'Password and confirmation password do not match'
+        flash.now[:notice] = @user.errors.full_messages
         erb :'user/new'
       end
     end
@@ -36,7 +36,7 @@ register Sinatra::Flash
     post '/links' do
         link = Link.new(url: params[:url], title: params[:title])
         params[:tags].split.each do |tag|
-          link.tags << Tag.create(name: tag)
+          link.tags << Tag.first_or_create(name: tag)
         end
       link.save
       redirect to '/links'
